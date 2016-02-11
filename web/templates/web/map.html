@@ -1,0 +1,33 @@
+{% extends 'livingrates/base.html' %}
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/static/livingrates/css/overlay.css">
+    <link rel="stylesheet" type="text/css" href="/static/web/css/map.css">
+{% endblock %}
+
+
+{% block body %}
+    {% include 'web/overlay.html' %}
+    {% include 'web/header.html' %}
+
+    <div id="map" data-url="{% url 'map' %}"></div>
+
+    {% include 'web/footer.html' %}
+
+    {% block partials %}
+        {% include 'web/error.html' %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block js %}
+    <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+    <script src="/static/spin/spin.min.js" type="text/javascript"></script>
+    <script src="/static/livingrates/js/csrf.js" type="text/javascript"></script>
+    <script src="/static/livingrates/js/overlay.js" type="text/javascript"></script>
+    <script src="/static/livingrates/js/modals.js" type="text/javascript"></script>
+    <script src="/static/web/js/error.js" type="text/javascript"></script>
+    <script src="/static/web/js/map.js" type="text/javascript"></script>
+    <script src="/static/web/js/search.js" type="text/javascript"></script>
+{% endblock %}

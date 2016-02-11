@@ -1,0 +1,32 @@
+{% if request.user.is_authenticated %}
+    <li>
+        <a href="javascript:getUpdate('{% url 'update' %}');">
+            <i class="fa fa-user"></i> Account </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-star"></i> Favourites </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-flag"></i> Rates </a>
+    </li>
+    <li class="divider"> </li>
+    <li>
+        <a href="javascript:getSignOut('{% url 'signout' %}');">
+            <i class="fa fa-sign-out"></i> Sign Out </a>
+    </li>
+{% else %}
+    <li>
+        <a href="javascript:getSignUp('{% url 'signup' %}');">
+            <i class="fa fa-user-plus"></i> Sign Up </a>
+    </li>
+    <li>
+        <a href="javascript:getSignIn('{% url 'signin' %}');">
+            <i class="fa fa-sign-in"></i> Sign In </a>
+    </li>
+    <li>
+        <a href="javascript:getReset('{% url 'reset' %}');">
+            <i class="fa fa-eraser"></i> Reset </a>
+    </li>
+{% endif %}

@@ -1,0 +1,37 @@
+{% load widget_tweaks %}
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form id="reset-form" method="POST" action="javascript:postReset('{% url 'reset' %}');" class="form-horizontal">
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Reset Password</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group{% if reset_form.email.errors %} has-error{% endif %}">
+                        <label class="col-md-3 control-label">Email*</label>
+                        <div class="col-md-9">
+                            {% render_field reset_form.email class="form-control" placeholder="Email" %}
+                        </div>
+                    </div>
+                    {% if message %}
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                {{ message }}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn green">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->

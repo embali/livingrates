@@ -1,0 +1,8 @@
+Django==1.8.6
+Pillow==3.0.0
+django-admin-bootstrapped==2.5.6
+django-mailgun==0.8.0
+django-widget-tweaks==1.4.1
+psycopg2==2.6.1
+requests==2.8.1
+six==1.10.0

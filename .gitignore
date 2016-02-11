@@ -1,0 +1,3 @@
+*.py[co]
+*_local.py
+__pycache__
